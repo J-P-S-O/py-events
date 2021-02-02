@@ -1,8 +1,5 @@
 class EventEmitter:
-    def _init_(self):
-        self.map = {
-            
-        }
+    map = {}
     def on(self, event, handler):
         if not callable(handler):
             raise "TypeError: Handler must be function"
