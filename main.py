@@ -1,20 +1,20 @@
-class EventEmitter{
+class EventEmitter:
     def _init_(self):
         self.map = {
             
         }
     def on(self, event, handler):
-        if not callable(handler)
-            throw "TypeError: Handler must be function"
+        if not callable(handler):
+            raise "TypeError: Handler must be function"
             
             
-        if (self.map.get(event, None) != None)
+        if (self.map.get(event, None) != None):
             self.map[event].append(handler)
-        else
+        else:
             self.map[event] = []
             self.map[event].append(handler)
     def emit(self, event, args):
-        if not self.map[event]
+        if not self.map[event]:
             return
         
         for i in self.map[event]:
@@ -23,7 +23,7 @@ class EventEmitter{
     def remove(self, event, handler):
         if not handler:
             self.map[event] = []
-        else
+        else:
             j = 0
             for i in self.map[event]:
                 
@@ -34,4 +34,3 @@ class EventEmitter{
                 j = j+1
         
     
-}
